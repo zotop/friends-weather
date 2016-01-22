@@ -1,0 +1,12 @@
+<h1>Friend's list</h1>
+
+<%= form_for :friends, url: weather_friends_path do |f| %>
+	<% @friends.each do |friend| %>
+	    <p>
+	    	<%= friend.firstName %> <%= friend.surname %> - <%= friend.location %> 
+	    	<input type="checkbox" name='friends_id[]' value=<%=friend.id%>>
+	    </p>
+	 <% end %> 
+	 <input type="submit" value="Compare Weather">
+
+<% end %>

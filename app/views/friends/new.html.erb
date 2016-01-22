@@ -1,0 +1,22 @@
+<h1>New Friend</h1>
+
+<%= form_for :friend, url: friends_path do |f| %>
+  <p>
+    <%= f.label :firstName %><br>
+    <%= f.text_field :firstName %>
+  </p>
+
+  <p>
+    <%= f.label :surname %><br>
+    <%= f.text_field :surname %>
+  </p>
+ 
+  <p>
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
