@@ -1,5 +1,5 @@
 class WeatherController < ApplicationController
   def show
-  	render plain: params
+  	render json: params
   end
 end
