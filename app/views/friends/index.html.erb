@@ -1,6 +1,6 @@
 <h1>Friend's list</h1>
 
-<%= form_for :friends, url: weather_friends_path do |f| %>
+<%= form_for :friends, url: weather_path, method: 'GET' do |f| %>
 	<% @friends.each do |friend| %>
 	    <p>
 	    	<%= friend.firstName %> <%= friend.surname %> - <%= friend.location %> 

@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :friends do
-    collection do 
-      post 'weather'
-    end
-  end
+  resources :friends 
   
   get 'weather' => 'weather#show'
 
@@ -12,7 +8,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'friends#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
