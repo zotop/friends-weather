@@ -11,6 +11,7 @@
 					<th>Name</th>
 					<th>Location</th>
 					<th/>
+					<th/
 				</tr>
 			</thead>
 			<tbody>
@@ -19,6 +20,7 @@
 					<td><%= friend.firstName %> <%= friend.surname %></td>
 					<td><%= friend.location %></td>
 					<td><input type="checkbox" name='friends_id[]' value=<%=friend.id%>></td>
+					<td><%= link_to 'Delete', friend_path(friend), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 				</tr>
 			 <% end %>
 		 	</tbody>

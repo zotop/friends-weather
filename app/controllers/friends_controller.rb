@@ -11,6 +11,12 @@ class FriendsController < ApplicationController
   		redirect_to friends_path
 	end
 
+	def destroy 
+		@friend = Friend.find(params["id"])
+		@friend.destroy
+		redirect_to friends_path
+	end 
+
 	private
 	  def friend_params
 	    params.require(:friend).permit(:firstName, :surname, :location)
