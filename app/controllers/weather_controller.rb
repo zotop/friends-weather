@@ -9,7 +9,7 @@ class WeatherController < ApplicationController
   	@friendsWeather = Array.new 
   	hydra = Typhoeus::Hydra.new
   	friends.each do |friend|
-  		location = friend['location']
+  		location = CGI.escape friend['location']
 		weatherApiUrl = WEATHER_BASE_URL + "?q=" + location + "&appid=" + WEATHER_API_KEY + "&units=metric"
   		request = Typhoeus::Request.new weatherApiUrl
     	request.on_complete do |response|
