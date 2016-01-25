@@ -1,8 +1,20 @@
 class FriendsController < ApplicationController
 
-
 	def index
 		@friends = Friend.all
+	end
+
+	def edit
+		@friend = Friend.find(params["id"])
+	end
+
+	def update
+		@friend = Friend.find(params[:id])
+	  	if @friend.update(friend_params)
+	    	redirect_to friends_path
+	  	else
+	    	render 'edit'
+	  	end
 	end
 
 	def create
