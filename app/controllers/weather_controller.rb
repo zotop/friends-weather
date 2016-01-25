@@ -13,15 +13,15 @@ class WeatherController < ApplicationController
 		weatherApiUrl = WEATHER_BASE_URL + "?q=" + location + "&appid=" + WEATHER_API_KEY + "&units=metric"
   		request = Typhoeus::Request.new weatherApiUrl
     	request.on_complete do |response|
-    		jsonResponse = JSON.parse response.body
-      		temperature = jsonResponse['main']['temp']
-			weatherDescription = jsonResponse['weather'][0]['description'].downcase
-			weatherIcon = jsonResponse['weather'][0]['icon']
-			friendAsHash = friend.attributes
-			friendAsHash ['temperature'] = temperature
-			friendAsHash ['weatherDescription'] = weatherDescription
-			friendAsHash ['weatherIcon'] = weatherIcon
-			@friendsWeather.push friendAsHash	
+      	jsonResponse = JSON.parse response.body
+        temperature = jsonResponse['main']['temp']
+  			weatherDescription = jsonResponse['weather'][0]['description'].downcase
+  			weatherIcon = jsonResponse['weather'][0]['icon']
+  			friendAsHash = friend.attributes
+  			friendAsHash ['temperature'] = temperature
+  			friendAsHash ['weatherDescription'] = weatherDescription
+  			friendAsHash ['weatherIcon'] = weatherIcon
+  			@friendsWeather.push friendAsHash	
     	end
 
   		hydra.queue request
