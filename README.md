@@ -10,5 +10,5 @@ One can add friends and their locations in the world, for later on, check their 
 
 [Typhoeus](https://github.com/typhoeus/typhoeus) is used for making parallel http requests against the weather api. 
 
-[![Friend's Weather](https://raw.githubusercontent.com/zotop/friends-weather/master/app/assets/images/screenshot1.png)]
+![Friend's Weather](https://raw.githubusercontent.com/zotop/friends-weather/master/app/assets/images/screenshot1.png)
 
