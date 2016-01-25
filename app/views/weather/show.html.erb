@@ -1,9 +1,26 @@
-<h1>Show the weather</h1>
+<div class="container">
 
-<% @friendsWeather.each do |friendWeather| %>
-<p>
-	<%= friendWeather['firstName'] %> <%= friendWeather['surname'] %> - <%= friendWeather['location'] %>
-	<%= friendWeather['temperature'] %>°C - <%= friendWeather['weatherDescription'] %>
-	<img src="http://openweathermap.org/img/w/<%= friendWeather['weatherIcon'] %>.png">
-</p>
-<% end %> 
+	<h4>Show the weather</h4>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Location</th>
+				<th>Weather</th>
+				<th/>
+			</tr>
+		</thead>
+		<tbody>
+		<% @friendsWeather.each do |friendWeather| %>
+			<tr>
+				<td><%= friendWeather['firstName'] %> <%= friendWeather['surname'] %></td>
+				<td><%= friendWeather['location'] %></td>
+				<td><%= friendWeather['temperature'] %>°C - <%= friendWeather['weatherDescription'] %></td>
+				<td><img src="http://openweathermap.org/img/w/<%= friendWeather['weatherIcon'] %>.png"></td>
+			</tr>
+		<% end %> 
+	 	</tbody>
+	</table>
+
+</div>

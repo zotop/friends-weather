@@ -1,12 +1,29 @@
-<h1>Friend's list</h1>
+<div class="container">
+ 
+	<h4>Friend's list</h4>
 
-<%= form_for :friends, url: weather_path, method: 'GET' do |f| %>
-	<% @friends.each do |friend| %>
-	    <p>
-	    	<%= friend.firstName %> <%= friend.surname %> - <%= friend.location %> 
-	    	<input type="checkbox" name='friends_id[]' value=<%=friend.id%>>
-	    </p>
-	 <% end %> 
-	 <input type="submit" value="Compare Weather">
+	<%= form_for :friends, url: weather_path, method: 'GET' do |f| %>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Location</th>
+					<th/>
+				</tr>
+			</thead>
+			<tbody>
+			<% @friends.each do |friend| %>
+				<tr>
+					<td><%= friend.firstName %> <%= friend.surname %></td>
+					<td><%= friend.location %></td>
+					<td><input type="checkbox" name='friends_id[]' value=<%=friend.id%>></td>
+				</tr>
+			 <% end %>
+		 	</tbody>
+		</table> 
+		 <input type="submit" value="Compare Weather">
 
-<% end %>
+	<% end %>
+	
+
+</div>
